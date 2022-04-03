@@ -46,3 +46,8 @@ Route::get('pilihan', function () {
 Route::get('pilihan/{id}', function ($id) {
     return view('destinasi',['halaman' => $id]);
 });
+
+
+Route::get('login', function () {
+    return view('login');
+});
