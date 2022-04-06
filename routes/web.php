@@ -44,7 +44,44 @@ Route::get('pilihan', function () {
 });
 
 Route::get('pilihan/{id}', function ($id) {
-    return view('destinasi',['halaman' => $id]);
+    $dataHalaman = [ 
+        [
+            'judul'=>$id,
+            'deskripsi'=>"Danau galau bisa dibilang salah satu titik di Telkom university yang sangat iconic bagi keluarga tel-u. Danau galauy adalah tempat yang menenangkan, tempat sebagai Pelepas penat, tempat berkumpul, swafoto, dan menjadi item menarik Telkom University",
+            'img'=>[
+                "/img/tempimage.png",
+                "/img/tempimage.png",
+                "/img/tempimage.png",
+            ],
+            'langkah'=>[
+                [
+                    'nama'=>"Pilih Titik Awal",
+                    'titik'=>[
+                        [320,415],
+                        [245,350],
+                    ]
+                ],
+                [
+                    'nama'=>"Langkah kedua",
+                    'titik'=>[
+                        [320,537],
+                        [130,480],
+                    ]
+                ],
+                [
+                    'nama'=>"Langkah ketiga",
+                    'titik'=>[
+                        [250,537],
+                        [200,520],
+                    ]
+                ],
+            ],  
+            'titikgoal'=>[245,350],
+        ],
+    ];
+    
+    
+    return view('destinasi',['halaman' => $dataHalaman[0]]);
 });
 
 
