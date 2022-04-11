@@ -1,42 +1,32 @@
 @extends('layouts.main')
-
 @section('container')
     <div class="flex justify-center">
         <div>
             <div class="flex justify-between mx-auto mt-10">
                 <a href="/pilihan" class="text-[20px] rounded border p-2">Kembali</a>
         
-                <p class="font-semibold text-[20px]">{{ $halaman['judul'] }}</p>
+                <p class="font-semibold text-[20px]">{{ $destinasi->nama_tempat }}</p>
             </div>
             <div class="flex justify-center mt-5 mx-auto gap-5">
                 <div class="w-auto">
-                    @foreach ($halaman['langkah'] as $step)
+                    @foreach ($step as $step)
                         @if ($loop->index == 0)
                         <div class="py-4 px-10 border rounded mb-2 text-center bg-gray-700  text-white inputan active ">
-                            <p class="font-semibold text-[20px] leading-[30px]">{{ $step['nama'] }}</p>
+                            <p class="font-semibold text-[20px] leading-[30px]">{{ $step->step_ke }}</p>
                         </div>
                         @else
                         <div class="py-4 px-10 border-2 rounded mb-2 text-center inputan">
-                            <p class="font-semibold text-[20px] leading-[30px]">{{ $step['nama'] }}</p>
+                            <p class="font-semibold text-[20px] leading-[30px]">{{ $step->step_ke }}</p>
                         </div>
                         @endif
                     @endforeach
                 </div>
                 <div class="w-[1000px]">
-                   
-                    {{-- @foreach($halaman['langkah'] as $langkah)
-                        {{ $langkah['nama'] }}
-                        @foreach($langkah['titik'] as $titik)
-                            {{ $titik[0] }}
-                        @endforeach
-                    @endforeach --}}
-                    {{-- {{ $halaman["langkah"][1]['nama'] }}
-                    {{ count($halaman['langkah']) }} --}}
                     {{-- custom map --}}
                     <div class="relative">
                         <img src="/img/map.png" class="w-[1000px] rounded-lg">
                          {{-- titip map --}}
-                        @foreach ($halaman['langkah'][0]['titik'] as $titik)
+                        {{-- @foreach ($step as $step)
                             <div class="group absolute h-10 flex justify-center items-center first-step" style="top: {{ $titik[0] . "px" }};right: {{ $titik[1] . "px" }}">
                                 <img src="/img/pinpoint.png" class="cursor-pointer h-full">
                                 <div class="relative z-50">
@@ -47,11 +37,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
-                            
-                        @endforeach
-                        @foreach ($halaman['langkah'][1]['titik'] as $titik)
+                        @endforeach --}}
+                        {{-- @foreach ($halaman['langkah'][1]['titik'] as $titik)
                             <div class="hidden justify-center items-center group absolute h-10  {{ $halaman["langkah"][1]['nama'] }}" style="top: {{ $titik[0] . "px" }};right: {{ $titik[1] . "px" }}">
                                 <img src="/img/pinpoint.png" class="cursor-pointer h-full">
                                 <div class="relative z-50">
@@ -62,8 +50,8 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                        @foreach ($halaman['langkah'][2]['titik'] as $titik)
+                        @endforeach --}}
+                        {{-- @foreach ($halaman['langkah'][2]['titik'] as $titik)
                         <div class="hidden justify-center items-center group absolute h-10 {{ $halaman["langkah"][2]['nama'] }}" style="top: {{ $titik[0] . "px" }};right: {{ $titik[1] . "px" }}">
                             <img src="/img/pinpoint.png" class="cursor-pointer h-full">
                             <div class="relative z-50">
@@ -76,18 +64,18 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                         
                     </div>
                     <div class="pt-10">
                         <div class="text-[25px] space-y-[24px]">
                             <h1 class="font-semibold">Informasi terkait</h1>
-                            <h1 class="font-semibold">{{ $halaman['judul'] }}</h1>
-                            <p>{{ $halaman['deskripsi'] }}</p>
+                            <h1 class="font-semibold">{{ $destinasi->nama_tempat }}</h1>
+                            <p>{{ $destinasi->deskripsi }}</p>
                             <h1 class="font-semibold">Foto</h1>
                             <div class="flex gap-2">
-                                @foreach($halaman['img'] as $img)
-                                    <img src="{{ $img }}" class="h-[100px]">
+                                @foreach($img as $img)
+                                    <img src="{{ $img->src }}" class="h-[100px]">
                                 @endforeach
                             </div>
                             <h1 class="font-semibold">Komentar Coming Soon</h1>
