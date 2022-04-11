@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             DestinasiTableSeeder::class,
-            StepDestinasiTableSeeder::class
+            StepDestinasiTableSeeder::class,
+            komentarTableSeeder::class
         ]);
     }
+
+
 }

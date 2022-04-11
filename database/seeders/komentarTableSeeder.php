@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\komentar;
+class komentarTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $komentar = new komentar;
+        $komentar->id_destinasi = 1;
+        $komentar->komen = "tempatnya menarik";
+        $komentar->save();
+
+        $komentar = new komentar;
+        $komentar->id_destinasi = 1;
+        $komentar->komen = "banyak spot yang menarik";
+        $komentar->save();
+    }
+}

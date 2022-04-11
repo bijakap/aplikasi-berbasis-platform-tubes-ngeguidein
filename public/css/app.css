@@ -482,6 +482,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-\[10px\] {
+  margin-bottom: 10px;
+}
 .mt-\[130px\] {
   margin-top: 130px;
 }
@@ -518,6 +521,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[100px\] {
   height: 100px;
 }
+.h-\[50px\] {
+  height: 50px;
+}
 .h-\[200px\] {
   height: 200px;
 }
@@ -536,11 +542,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[200px\] {
   width: 200px;
 }
-.w-\[880px\] {
-  width: 880px;
-}
 .w-full {
   width: 100%;
+}
+.w-\[50px\] {
+  width: 50px;
+}
+.w-\[880px\] {
+  width: 880px;
 }
 .w-\[80\%\] {
   width: 80%;
@@ -634,14 +643,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-.bg-\[\#1A2E35\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 46 53 / var(--tw-bg-opacity));
-}
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-\[\#1A2E35\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 46 53 / var(--tw-bg-opacity));
+}
+<<<<<<< HEAD
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+=======
+>>>>>>> 897dfaf21ebcba5f6d764c82eb7ede657ed5ce5c
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -674,6 +690,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .py-\[7px\] {
   padding-top: 7px;
