@@ -1,4 +1,5 @@
-@section('komentar')
+@extends('layouts.notincludednav')
+@section('container')
     <div class="h-10">
         <div class="border-b-[2px] border-gray-700 pb-2 mb-[10px]">
             <form action="" method="post" class="flex">
@@ -9,7 +10,7 @@
         @for ($i = 0; $i < 2; $i++)
         <div class="flex py-[10px] border-b-[2px] border-gray-700">
             <div>
-                <img src="/img/tempimage.png" class="h-[50px] w-[50px] object-cover">
+                <img src="/img/profile.png" class="h-[50px] w-[50px] object-cover">
             </div>
             <div>
                 <p class="font-semibold">{{ "Username" . " " . "Tanggal" }}</p>

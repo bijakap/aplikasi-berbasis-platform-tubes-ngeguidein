@@ -88,3 +88,7 @@ Route::get('pilihan/{id}', function ($id) {
 Route::get('login', function () {
     return view('login');
 });
+
+Route::get('komentar', function () {
+    return view('komentar');
+});
