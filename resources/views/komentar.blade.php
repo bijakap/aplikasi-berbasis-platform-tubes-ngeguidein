@@ -1,5 +1,3 @@
-{{-- TEMPLATE --}}
-
 @section('komentar')
     <div class="h-10">
         <div class="border-b-[2px] border-gray-700 pb-2 mb-[10px]">
