@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\DestinasiController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\komentar;
+use App\Http\Controllers\KomenController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -95,5 +96,8 @@ Route::get('login', function () {
 });
 
 Route::get('komentar', function () {
-    return view('komentar');
+    $komen = komentar::where('id_destinasi', 1)->get();
+    return view('komentar', ['komen'=>$komen]);
 });
+
+Route::post('post_komen', [KomenController::class, 'index']);

@@ -491,17 +491,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mb-\[10px\] {
-  margin-bottom: 10px;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
 .block {
   display: block;
-}
-.inline-block {
-  display: inline-block;
 }
 .flex {
   display: flex;
@@ -530,9 +524,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[650px\] {
   height: 650px;
 }
-.h-\[50px\] {
-  height: 50px;
-}
 .w-auto {
   width: auto;
 }
@@ -557,9 +548,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[400px\] {
   width: 400px;
 }
-.w-\[50px\] {
-  width: 50px;
-}
 .-translate-x-\[60\%\] {
   --tw-translate-x: -60%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -572,9 +560,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.flex-col {
-  flex-direction: column;
 }
 .items-center {
   align-items: center;
@@ -651,13 +636,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(26 46 53 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-=======
->>>>>>> 897dfaf21ebcba5f6d764c82eb7ede657ed5ce5c
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -702,14 +680,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-\[7px\] {
   padding-top: 7px;
   padding-bottom: 7px;
-}
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.py-\[10px\] {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .px-\[50px\] {
   padding-left: 50px;

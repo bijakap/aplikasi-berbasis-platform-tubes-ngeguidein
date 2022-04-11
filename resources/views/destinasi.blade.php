@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div>
-                        @include('komentar.komentar')
+                        <!-- @include('komentar.komentar', ['komen' => $komen]) -->
                     </div>
                 </div>
             </div>
