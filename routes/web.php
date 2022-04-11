@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DestinasiController::class, 'index']);
 Route::get('pilihan', [DestinasiController::class, 'pilihan']);
 Route::get('pilihan/{id}', [DestinasiController::class, 'destinasi']);
+Route::get('admin', function () {
+    return view('admin');
+});
 // Route::get('pilihan', function () {
 //     $data = [
 //         [

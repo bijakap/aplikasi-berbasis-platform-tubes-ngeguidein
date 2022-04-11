@@ -80,12 +80,16 @@
                             </div>
                             <h1 class="font-semibold">Komentar Coming Soon</h1>
                         </div>
-
+                    </div>
+                    <div>
+                        @include('komentar.komentar')
                     </div>
                 </div>
             </div>
+            
         </div>
+        
     </div>
-
+    
     <script type="text/javascript" src="{{ url('js/destinasi.js') }}"></script>
 @endsection
