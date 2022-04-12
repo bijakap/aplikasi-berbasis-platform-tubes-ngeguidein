@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Destinasi;
 use App\Models\Step_destinasi;
 use Illuminate\Http\Request;
+use App\Models\komentar;
 
 class DestinasiController extends Controller
 {
@@ -23,11 +24,14 @@ class DestinasiController extends Controller
         $step = Step_destinasi::select('step_ke')->where('id_step', $id)->get();
         $img = Step_destinasi::select('src')->where('id_step', $id)->get();
         $titik = Step_destinasi::select('titik_x', 'titik_y')->where('id_step', $id)->get();
+        $komen = komentar::where('id_destinasi', $id)->get();
+        // dd($destinasi);
         return view('destinasi',[
             'destinasi' => $destinasi[0],
             'step' => $step,
             'img' => $img,
             'titik' => $titik,
+            'komen' => $komen
         ]);
     }
 }
