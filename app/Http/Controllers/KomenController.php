@@ -7,18 +7,17 @@ use App\Models\komentar;
 
 class KomenController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
+        // echo $id;
         komentar::create([
-            'id_destinasi'=>1, 
+            'id_destinasi'=>$id, 
             'komen'=>$request->komen,
         ]);
 
-        // return view('datatable', [
-        //     'data' => DataObat::all()
-        // ]);
+        return redirect('pilihan/' . $id);
         
-        dd(komentar::where('id_destinasi', 1));
+        // dd(komentar::where('id_destinasi', 1));
 
     }
 }

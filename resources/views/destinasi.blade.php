@@ -78,11 +78,11 @@
                                     <img src="{{ $img->src }}" class="h-[100px]">
                                 @endforeach
                             </div>
-                            <h1 class="font-semibold">Komentar Coming Soon</h1>
+                            <h1 class="font-semibold pb-4">Komentar</h1>
                         </div>
                     </div>
                     <div>
-                        <!-- @include('komentar.komentar', ['komen' => $komen]) -->
+                        @include('komentar.komentar', ['komen' => $komen, 'id_destinasi' => $destinasi->id_destinasi]) 
                     </div>
                 </div>
             </div>

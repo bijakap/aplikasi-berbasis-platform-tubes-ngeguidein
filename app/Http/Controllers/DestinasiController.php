@@ -25,7 +25,7 @@ class DestinasiController extends Controller
         $img = Step_destinasi::select('src')->where('id_step', $id)->get();
         $titik = Step_destinasi::select('titik_x', 'titik_y')->where('id_step', $id)->get();
         $komen = komentar::where('id_destinasi', $id)->get();
-        //dd($komen);
+        // dd($destinasi);
         return view('destinasi',[
             'destinasi' => $destinasi[0],
             'step' => $step,

@@ -1,23 +1,20 @@
-<!-- @dd($komen) -->
 <div class="h-10">
     <div class="border-b-[2px] border-gray-700 pb-2 mb-[10px]">
-        <form action="" method="post" class="flex">
-            <input type="text" placeholder="Komen" class="bg-gray-200 w-full p-5">
-            <button type='submit' class="ml-2 bg-gray-200 px-2">KIRIM</button>
+        <form action="{{ url('pilihan/'. $id_destinasi .'/post_komen') }}" method="post" class="flex shadow-sm">
+            @csrf
+            <input type="text" placeholder="Comment..." class="bg-gray-200 w-full p-5" name="komen">
+            <button type='submit' class="bg-gray-200 px-2 font-medium">KIRIM</button>
         </form>
     </div>
-    <!-- @for ($i = 0; $i < 2; $i++)
-    <div class="flex py-[10px] border-b-[2px] border-gray-700">
-        <div>
-            <img src="/img/tempimage.png" class="h-[50px] w-[50px] object-cover">
+    @foreach ($komen as $komen)
+        <div class="flex py-[10px] border-b-[2px] border-gray-700">
+            <div>
+                <img src="/img/profile.png" class="h-[50px] w-[50px] object-cover">
+            </div>
+            <div class="ml-3">
+                <p class="font-semibold">{{ "Username" . " " . $komen->created_at }}</p>
+                <div>{{$komen->komen}}</div>
+            </div>
         </div>
-        <div class="ml-2">   
-            <p class="font-semibold">{{ "Username" . " " . "Tanggal" }}</p>
-            <div>Komen</div>
-        </div>
-    </div>
-    @endfor -->
-    @foreach($komen as $komen)
-        {{$komen->komen}}
     @endforeach
 </div>
