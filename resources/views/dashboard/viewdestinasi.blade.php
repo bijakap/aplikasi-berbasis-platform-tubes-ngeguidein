@@ -120,7 +120,7 @@
                                 <div id="{{ 'Preview'. $langkah->id }}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
                                     <div class="relative p-4 w-full max-w-[70%] h-full md:h-auto">
                                         <!-- Modal content -->
-                                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                        <div class="bg-white rounded-lg shadow dark:bg-gray-700">
                                             <!-- Modal header -->
                                             <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
                                                 <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
@@ -130,34 +130,16 @@
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                                                 </button>
                                             </div>
-                                            <form action="{{ url('admin/edit/'. $destinasi->id_destinasi .'/update_step/' . $langkah->id) }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
                                             <!-- Modal body -->
-                                            <div class="p-6 space-y-6">
-                                                <div class="flex gap-3 w-full h-full">   
-                                                    <div>
-                                                        <label class="uppercase text-sm font-bold">Nama Langkah</label>
-                                                        <input name="langkah" value="{{ $langkah->step_ke }}" type="text" class="p-2 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
+                                            <div class="p-6 space-y-6 flex justify-center mx-auto">
+                                               <div class="relative w-[700px]">
+                                                    <img src="/img/map.png" class="w-[700px] h-full rounded-lg">
+                                                    <div class="absolute h-8 flex justify-center items-center" style="top: {{ $langkah->titik_y-($langkah->titik_y*30/100) ."px" }};right: {{ $langkah->titik_x-($langkah->titik_x*30/100) . "px" }}">
+                                                        <img src="/img/pinpoint.png" class="cursor-pointer h-full">
                                                     </div>
-                                                    <div>
-                                                        <label class="uppercase text-sm font-bold">Titik X</label>
-                                                        <input name="titik_x" value="{{ $langkah->titik_x }}" type="text" class="p-2 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
-                                                    </div>
-                                                    <div>
-                                                        <label class="uppercase text-sm font-bold">Titik Y</label>
-                                                        <input name="titik_y" value="{{ $langkah->titik_y }}" type="text" class="p-2 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
-                                                    </div>
-                                                    <div>
-                                                        <label class="uppercase text-sm font-bold">Gambar</label>
-                                                        <input type="file" class="py-[5px] px-1 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
-                                                    </div>
-                                                </div>
+                                               </div>
                                             </div>
-                                            <!-- Modal footer -->
-                                            <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button data-modal-toggle="{{ 'Preview'. $langkah->id }}" type="submit" class="text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Update</button>
-                                            </div>
-                                        </form>
+                                           
                                         </div>
                                     </div>
                                 </div>
