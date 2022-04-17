@@ -34,6 +34,10 @@ Route::get('login', function () {
 
 Route::get('profile', [AkunController::class, 'index']);
 
+Route::get('profile/edit/{id}', [AkunController::class, 'tampilkan_data']);
+
+Route::post('profile/edit/{id}/post', [AkunController::class, 'ubah']);
+
 Route::get('komentar', function () {
     $komen = komentar::where('id_destinasi', 1)->get();
     return view('komentar', ['komen'=>$komen]);

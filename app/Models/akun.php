@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class akun extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $fillable = [
         'username',
         'password',
         'email',
+        'gambar',
         'job',
         'faculty',
         'bio'
