@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
-            $table->string('id_destinasi');
+            $table->unsignedBigInteger('id_destinasi');
             $table->string('komen');
             $table->timestamps();
 

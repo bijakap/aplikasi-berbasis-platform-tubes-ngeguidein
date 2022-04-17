@@ -21,11 +21,14 @@ Route::get('pilihan', [DestinasiController::class, 'pilihan']);
 Route::get('pilihan/{id}', [DestinasiController::class, 'destinasi']);
 Route::post('pilihan/{id}/post_komen', [KomenController::class, 'index']);
 Route::get('admin', [AdminController::class,'index']);
-Route::get('admin/edit/{id}', [AdminController::class, 'edit']);
-// Route::get('admin/edit', function () {
-//     return view('dashboard.edit');
-// });
-
+// Route::get('admin/edit/{id}', [AdminController::class, 'edit']);
+Route::post('admin/post', [AdminController::class, 'tambah']);
+Route::post('admin/view/{id}/post', [AdminController::class, 'tambahlangkah']);
+Route::get('admin/view/{id}', [AdminController::class, 'view']);
+Route::post('admin/edit/{id}/update_destinasi', [AdminController::class, 'update_destinasi']);
+Route::post('admin/edit/{id}/update_step/{index}', [AdminController::class, 'update_step']);
+Route::get('admin/view/{id}/hapus/', [AdminController::class,'deleteDestinasi']);
+Route::get('admin/view/{id}/hapus/{id_step}', [AdminController::class,'deleteLangkah']);
 
 Route::get('login', function () {
     return view('login');

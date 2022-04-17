@@ -1,6 +1,9 @@
 // alert('test')
 
 const dict_langkah = ['kedua', 'ketiga', 'keempat', 'kelima', 'keenam', 'ketujuh', 'kedelapan']
+const step = document.getElementsByClassName("step")
+step[0].classList.remove("hidden")
+step[0].classList.add('flex')
 
 const inputan = document.getElementsByClassName("inputan")
 
@@ -25,26 +28,15 @@ function removeClass(){
 
 function displayPinpoint(index, countPinpoint){
   console.log(index)
-  for (let i = 0; i < countPinpoint-1; i++){
-    const step = document.getElementsByClassName("Langkah "+dict_langkah[i])
-    for (let j = 0; j < step.length ; j++){
-      if(i <= index-1){
-        step[j].classList.remove('hidden')
-        step[j].classList.add('flex')
-      } else {
-        step[j].classList.remove('flex')
-        step[j].classList.add('hidden')
-      }
+  const step = document.getElementsByClassName("step")
+  for (let i = 0; i < step.length; i++){
+    if (i == index){
+      step[i].classList.remove('hidden');
+      step[i].classList.add('flex');
+    }
+    else if(step[i].classList.contains('flex')){
+      step[i].classList.remove('flex');
+      step[i].classList.add('hidden')
     }
   }
-}
-
-function PencetPilih(target,countstep){
-  console.log("target : ", target)
-  console.log("banyak step :", countstep)
-  for (let i = 0; i < countstep-1 ; i++){
-    console.log(document.getElementsByClassName("Langkah "+dict_langkah[i]))
-  }
-  // step2 = document.getElementsByClassName("Langkah kedua");
-  // for (const step2 of )
 }
