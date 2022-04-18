@@ -5,6 +5,7 @@ use App\Http\Controllers\DestinasiController;
 use Illuminate\Support\Facades\Route;
 use App\Models\komentar;
 use App\Http\Controllers\KomenController;
+use App\Http\Controllers\AkunController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,8 +35,13 @@ Route::get('login', function () {
     return view('login');
 });
 
+Route::get('profile', [AkunController::class, 'index']);
+
+Route::get('profile/edit/{id}', [AkunController::class, 'tampilkan_data']);
+
+Route::post('profile/edit/{id}/post', [AkunController::class, 'ubah']);
+
 Route::get('komentar', function () {
     $komen = komentar::where('id_destinasi', 1)->get();
     return view('komentar', ['komen'=>$komen]);
 });
-
