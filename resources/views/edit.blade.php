@@ -27,7 +27,7 @@
         <input
           type="text" name="username"
           id="username"
-          value="{{ $data[0]->username }}"
+          value="{{ $data[0]->name }}"
           class="form-control
                   block
                   w-full

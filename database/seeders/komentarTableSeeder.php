@@ -16,12 +16,14 @@ class komentarTableSeeder extends Seeder
     {
         $komentar = new komentar;
         $komentar->id_destinasi = 1;
+        $komentar->id_user = 2;
         $komentar->komen = "tempatnya menarik";
         $komentar->save();
 
         $komentar = new komentar;
         $komentar->id_destinasi = 1;
-        $komentar->komen = "banyak spot yang menarik";
+        $komentar->id_user = 2;
+        $komentar->komen = "Tempatnya bagus";
         $komentar->save();
     }
 }

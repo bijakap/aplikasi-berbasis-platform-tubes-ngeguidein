@@ -7,11 +7,12 @@ use App\Models\komentar;
 
 class KomenController extends Controller
 {
-    public function index(Request $request, $id)
+    public function index(Request $request, $id, $id_user)
     {
         // echo $id;
         komentar::create([
-            'id_destinasi'=>$id, 
+            'id_destinasi'=>$id,
+            'id_user'=>$id_user, 
             'komen'=>$request->komen,
         ]);
 

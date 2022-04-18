@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 use App\Models\akun;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AkunController extends Controller
 {
     public function index() {
-      $callAkun = akun::where("id", 1)->get();
+
+      
+      $callAkun = User::where("id", Auth::user()->id)->get();
       return view('profile', ["data"=>$callAkun]);
     }
 
     public function tampilkan_data($id)
     {
-        // dd($request->all());
 
-        $callAkun = akun::where("id", $id)->get();
+        $callAkun = User::where("id", $id)->get();
         return view('edit', ["data"=>$callAkun, "id"=>$id]);
 
     }
@@ -34,8 +37,8 @@ class AkunController extends Controller
         $destinationPath = public_path().'/img' ;
         $file->move($destinationPath,$fileName);
 
-        akun::where('id', $id)->update([
-          'username'=>$request->username,
+        User::where('id', $id)->update([
+          'name'=>$request->username,
           'password' =>$request->password,
           'email'=>$request->email,
           'job'=>$request->job,
@@ -45,8 +48,8 @@ class AkunController extends Controller
         ]);
         return redirect('/profile')->with('success', 'Update Berhasil');
     } else {
-        akun::where('id', $id)->update([
-          'username'=>$request->username,
+        User::where('id', $id)->update([
+          'name'=>$request->username,
           'password' =>$request->password,
           'email'=>$request->email,
           'job'=>$request->job,

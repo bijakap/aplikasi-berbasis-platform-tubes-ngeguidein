@@ -1,4 +1,5 @@
 @extends('layouts.mainafterlogin')
+{{-- @dd($data[0]->gambar) --}}
 @section('container')
 <div class="text-gray-800 antialiased">
   <main class="profile-page">
@@ -68,9 +69,9 @@
             </div>
             <div class="text-center mt-24">
               <h3
-                class="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2"
+                class="text-4xl font-semibold leading-normal mb-2 text-gray-800"
               >
-                {{ $data[0]->username }}
+                {{ $data[0]->name }}
               </h3>
               <div class="mb-2 text-gray-700 mt-10">
                 <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i

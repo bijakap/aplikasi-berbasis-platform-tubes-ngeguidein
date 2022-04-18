@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_destinasi');
+            $table->unsignedBigInteger('id_user');
             $table->string('komen');
             $table->timestamps();
 
             //Foreign Key
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_destinasi')->references('id_destinasi')->on('destinasis');
         });
     }

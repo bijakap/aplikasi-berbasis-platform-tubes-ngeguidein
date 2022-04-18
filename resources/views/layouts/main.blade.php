@@ -14,12 +14,24 @@
 <body>
     <nav class="px-[50px] py-[20px] border-b-2 border-black font-semibold">
         <div class="flex justify-between">
-            <a href="#">
+            <a href="/">
                 <h1>Di-Guide-In</h1>
             </a>
             <div class="flex justify-between gap-4">
-                <a href="#">How To Use</a>
-                <a href="/login">Login</a>
+                @if(Auth::check())
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+                        @if (Auth::user()->level === 'admin')
+                            <a href="/admin" class="uppercase">{{ Auth::user()->level }} |</a>
+                        @else
+                            <a href="/profile" class="uppercase">{{ Auth::user()->level }} |</a>
+                        @endif
+                        <button class="font-semibold uppercase" type="submit">Logout</button>
+                    </form>
+                @else
+                    <a href="/login" class="uppercase">Login</a>
+                @endif
+                  
             </div>
         </div>
     </nav>

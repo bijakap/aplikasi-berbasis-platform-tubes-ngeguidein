@@ -1,6 +1,6 @@
 <div class="h-10">
     <div class="border-b-[2px] border-gray-700 pb-2 mb-[10px]">
-        <form action="{{ url('pilihan/'. $id_destinasi .'/post_komen') }}" method="post" class="flex shadow-sm">
+        <form action="{{ url('pilihan/'. $id_destinasi .'/post_komen/'. Auth::user()->id) }}" method="post" class="flex shadow-sm">
             @csrf
             <input type="text" placeholder="Comment..." class="bg-gray-200 w-full p-5" name="komen">
             <button type='submit' class="bg-gray-200 px-2 font-medium">KIRIM</button>

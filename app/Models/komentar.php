@@ -9,7 +9,12 @@ class komentar extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_destinasi', 
+        'id_destinasi',
+        'id_user',
         'komen',
     ]; 
+
+    public function komentar() {
+        return $this->hasMany(User::class);
+    }
 }

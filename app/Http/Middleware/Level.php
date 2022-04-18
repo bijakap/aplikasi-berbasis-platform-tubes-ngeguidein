@@ -23,8 +23,8 @@ class Level
         }
         
         if (Auth::user()->level == 'admin'){
-            return Redirect::to('Dashboard');
-        }elseif (Auth::user()->level == 'user'){
+            return Redirect::to('/');
+        }else if (Auth::user()->level == 'user'){
             return Redirect::to('/');
         }elseif  (Auth::user()->level == 'guest'){
             return Redirect::to('/');
