@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('step_destinasis', function (Blueprint $table) {
             $table->id();
-            $table->string('id_step');
+            $table->unsignedBigInteger('id_step');
             $table->string('step_ke');
             $table->string('titik_x');
             $table->string('titik_y');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign Key
-            $table->foreign('id_step')->references('id_destinasi')->on('destinasis');
+            $table->foreign('id_step')->references('id_destinasi')->on('destinasis')->onDelete('cascade');
         });
     }
 

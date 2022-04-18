@@ -10,8 +10,11 @@ class Step_destinasi extends Model
     use HasFactory;
     
     protected $fillable = [
-        'nama_tempat',
-        'deskripsi',
+        'id_step',
+        'step_ke',
+        'titik_x',
+        'titik_y',
+        'src',
     ];
     
     public function destinasi() {

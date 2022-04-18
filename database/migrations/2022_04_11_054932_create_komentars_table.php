@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('destinasis', function (Blueprint $table) {
-            $table->id('id_destinasi');
-            $table->string('nama_tempat');
-            $table->string('deskripsi');
-            $table->string('src');
+        Schema::create('komentars', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_destinasi');
+            $table->string('komen');
             $table->timestamps();
+
+            //Foreign Key
+            $table->foreign('id_destinasi')->references('id_destinasi')->on('destinasis');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('destinasis');
+        Schema::dropIfExists('komentars');
     }
 };
