@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => "Hashirama Hiro",
-            'email' => 'Armando@gmail.com',
+            'email' => 'Hiro@gmail.com',
             'password' => '$2y$10$uOerm2hD9fMazbM1zIKG2O.rZfCMDGpXRukv6K99P6x2yl6EEtRCu',
-            'job' => 'Perampok',
+            'job' => 'Anak Kuliah',
             'faculty' => 'Something something',
-            'bio' => "I'm interested in maling",
+            'bio' => "I'm interested in Programming",
             'gambar' => '/img/profile.png'
         ]);
 
