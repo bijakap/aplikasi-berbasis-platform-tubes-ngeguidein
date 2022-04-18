@@ -5,6 +5,7 @@ use App\Models\akun;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AkunController extends Controller
 {
@@ -30,34 +31,64 @@ class AkunController extends Controller
         'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2000',
       ]);
 
-      // echo $id . " " . $index;
-      if($file = $request->hasFile('image')) {      
-        $file = $request->file('image') ;
-        $fileName = $file->getClientOriginalName() ;
-        $destinationPath = public_path().'/img' ;
-        $file->move($destinationPath,$fileName);
+      if ($request->password){
+        if($file = $request->hasFile('image')) {      
+          $file = $request->file('image') ;
+          $fileName = $file->getClientOriginalName() ;
+          $destinationPath = public_path().'/img' ;
+          $file->move($destinationPath,$fileName);
+  
+          User::where('id', $id)->update([
+            'name'=>$request->username,
+            'password' =>Hash::make($request->password),
+            'email'=>$request->email,
+            'job'=>$request->job,
+            'faculty'=>$request->faculty,
+            'bio'=>$request->bio,
+            'gambar'=>'/img/' . $fileName,
+          ]);
+          return redirect('/profile')->with('success', 'Update Berhasil');
+        } else {
+            User::where('id', $id)->update([
+              'name'=>$request->username,
+              'password' =>Hash::make($request->password),
+              'email'=>$request->email,
+              'job'=>$request->job,
+              'faculty'=>$request->faculty,
+              'bio'=>$request->bio,
+            ]);
+            return redirect('/profile')->with('success', 'Update Berhasil');
+        }
+      } else {
+        if($file = $request->hasFile('image')) {      
+          $file = $request->file('image') ;
+          $fileName = $file->getClientOriginalName() ;
+          $destinationPath = public_path().'/img' ;
+          $file->move($destinationPath,$fileName);
+  
+          User::where('id', $id)->update([
+            'name'=>$request->username,
+            'email'=>$request->email,
+            'job'=>$request->job,
+            'faculty'=>$request->faculty,
+            'bio'=>$request->bio,
+            'gambar'=>'/img/' . $fileName,
+          ]);
+          return redirect('/profile')->with('success', 'Update Berhasil');
+        } else {
+            User::where('id', $id)->update([
+              'name'=>$request->username,
+              'email'=>$request->email,
+              'job'=>$request->job,
+              'faculty'=>$request->faculty,
+              'bio'=>$request->bio,
+            ]);
+            return redirect('/profile')->with('success', 'Update Berhasil');
+        }
+      }
 
-        User::where('id', $id)->update([
-          'name'=>$request->username,
-          'password' =>$request->password,
-          'email'=>$request->email,
-          'job'=>$request->job,
-          'faculty'=>$request->faculty,
-          'bio'=>$request->bio,
-          'gambar'=>'/img/' . $fileName,
-        ]);
-        return redirect('/profile')->with('success', 'Update Berhasil');
-    } else {
-        User::where('id', $id)->update([
-          'name'=>$request->username,
-          'password' =>$request->password,
-          'email'=>$request->email,
-          'job'=>$request->job,
-          'faculty'=>$request->faculty,
-          'bio'=>$request->bio,
-        ]);
-        return redirect('/profile')->with('success', 'Update Berhasil');
-    }
+      // echo $id . " " . $index;
+      
 
       // dd($request->all());
       // $data_user = akun::where('id', $id)->get();

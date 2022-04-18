@@ -1,4 +1,5 @@
 @extends('layouts.main')
+{{-- @dd($data[0]) --}}
 @section('container')
 
 <div class="bg-white ml-20 mt-10 w-[50%]">
@@ -51,7 +52,7 @@
           type="password"
           name="password"
           id="password"
-          value="{{ $data[0]->password }}"
+          value=""
           class="form-control
                   block
                   w-full
