@@ -1,4 +1,3 @@
-{{-- @dd($komen) --}}
 <div class="h-10">
     @if(Auth::check())
         <div class="border-b-[2px] border-gray-700 pb-2 mb-[10px]">
@@ -12,7 +11,7 @@
     @foreach ($komen as $komen)
         <div class="flex py-[10px] border-b-[2px] border-gray-700">
             <div>
-                <img src="/img/profile.png" class="h-[50px] w-[50px] object-cover">
+                <img src="{{ $komen->gambar }}" class="h-[50px] w-[50px] object-cover">
             </div>
             <div class="ml-3">
                 <p class="font-semibold">{{ $komen->name . " " . $komen->created_at }}</p>

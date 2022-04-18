@@ -1,4 +1,4 @@
-@extends('layouts.mainafterlogin')
+@extends('layouts.main')
 {{-- @dd($data[0]->gambar) --}}
 @section('container')
 <div class="text-gray-800 antialiased">

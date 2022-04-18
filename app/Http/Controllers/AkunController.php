@@ -12,14 +12,14 @@ class AkunController extends Controller
 
       
       $callAkun = User::where("id", Auth::user()->id)->get();
-      return view('profile', ["data"=>$callAkun]);
+      return view('profile.profile', ["data"=>$callAkun]);
     }
 
     public function tampilkan_data($id)
     {
 
         $callAkun = User::where("id", $id)->get();
-        return view('edit', ["data"=>$callAkun, "id"=>$id]);
+        return view('profile.edit', ["data"=>$callAkun, "id"=>$id]);
 
     }
 

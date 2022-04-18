@@ -26,7 +26,6 @@ class DestinasiController extends Controller
         $titik = Step_destinasi::select('titik_x', 'titik_y', 'src')->where('id_step', $id)->get();
         // SELECT * FROM `komentars` INNER JOIN `users` ON `users`.`id` = `komentars`.`id_user`
         $komen = komentar::join('users', 'users.id', '=', 'komentars.id_user')->where('id_destinasi', $id)->get();
-        // dd($komen);
         return view('destinasi',[
             'destinasi' => $destinasi[0],
             'step' => $step,

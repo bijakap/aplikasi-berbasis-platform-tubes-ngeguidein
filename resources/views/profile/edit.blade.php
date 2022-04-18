@@ -1,4 +1,4 @@
-@extends('layouts.mainafterlogin')
+@extends('layouts.main')
 @section('container')
 
 <div class="bg-white ml-20 mt-10 w-[50%]">
