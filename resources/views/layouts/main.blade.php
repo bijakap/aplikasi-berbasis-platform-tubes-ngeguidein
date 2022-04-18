@@ -25,5 +25,4 @@
     </nav>
     @yield('container')
 </body>
-
 </html>

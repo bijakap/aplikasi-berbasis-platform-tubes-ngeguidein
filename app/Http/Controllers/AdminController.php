@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Destinasi;
 use App\Models\Step_destinasi;
 use Illuminate\Http\Request;
-use PDO;
 
 class AdminController extends Controller
 {

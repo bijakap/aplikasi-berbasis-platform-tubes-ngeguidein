@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DestinasiTableSeeder::class,
             StepDestinasiTableSeeder::class,
-            komentarTableSeeder::class
+            komentarTableSeeder::class,
+            AkunSeeder::class
         ]);
 
         DB::table('users')->insert([
@@ -29,4 +30,6 @@ class DatabaseSeeder extends Seeder
             'Level' => 'Admin',
         ]);    
     }
+
+
 }
