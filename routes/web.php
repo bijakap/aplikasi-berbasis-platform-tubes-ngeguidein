@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,18 +16,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Destinasi
 Route::get('/', [DestinasiController::class, 'index']);
 Route::get('pilihan', [DestinasiController::class, 'pilihan']);
 Route::get('pilihan/{id}', [DestinasiController::class, 'destinasi']);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+
+
+//Admin
+Route::group(['middleware' => ['auth','level:admin']], function(){
+    
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboardAdmin');
     })->name('dashboard');
+    
 });
 
-Route::get('redirects',[HomeController::class,'index']);
+//User
+// Route::group(['middleware' => ['auth','level:user']], function(){
+    
+// });
+
+Route::group(['middleware' => ['auth','level:guest']], function(){
+    
+    Route::get('/', [DestinasiController::class, 'index']); 
+    Route::get('pilihan', [DestinasiController::class, 'pilihan']);
+    Route::get('pilihan/{id}', [DestinasiController::class, 'destinasi']);
+    
+});
+
+//google_auth
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+//auth
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboardAdmin');
+//     })->name('dashboard');
+// });
